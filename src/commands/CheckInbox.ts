@@ -1,5 +1,5 @@
 import {CommandOptions, Embed} from "discord-rose";
-import {checkInboxAsync} from "tempmail.lol";
+import {checkInboxAsync, Email} from "tempmail.lol";
 import UserEmails from "../util/UserEmails";
 
 const command: CommandOptions = {
@@ -13,8 +13,14 @@ const command: CommandOptions = {
         if(!inbox) {
             return ctx.reply("You don't have an inbox. Use `/generate` to create one.");
         }
-        
-        const emails = await checkInboxAsync(inbox[1] || "");
+    
+        let emails: Email[];
+        try {
+            emails = await checkInboxAsync(inbox[1] || "");
+        } catch(e) {
+            UserEmails.deleteAddress(ctx.author.id);
+            return ctx.reply("Your inbox has expired.  Use `/generate` to create a new one.");
+        }
         if(emails.length === 0) {
             return ctx.reply("You don't have any emails.");
         }

@@ -12,4 +12,8 @@ export default class UserEmails {
     public static setAddress(id: string, address: string, token: string): void {
         this.user_emails.set(id, [address, token]);
     }
+    
+    public static deleteAddress(id: string): void {
+        this.user_emails.delete(id);
+    }
 }

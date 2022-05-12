@@ -15,12 +15,14 @@ const command: CommandOptions = {
         }
     
         let emails: Email[];
+        
         try {
             emails = await checkInboxAsync(inbox[1] || "");
         } catch(e) {
             UserEmails.deleteAddress(ctx.author.id);
             return ctx.reply("Your inbox has expired.  Use `/generate` to create a new one.");
         }
+        
         if(emails.length === 0) {
             return ctx.reply("You don't have any emails.");
         }

@@ -1,14 +1,14 @@
 {
   "name": "tempmail-discord-bot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["discord", "bot", "email", "tempmail"],
+  "author": "Alexander Epolite <alexander@epolite.net>",
+  "license": "See LICENSE.txt",
   "dependencies": {
     "discord-rose": "^1.5.3",
     "tempmail.lol": "^1.2.1"

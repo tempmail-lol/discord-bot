@@ -1,0 +1,19 @@
+{
+  "name": "tempmail-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rose": "^1.5.3",
+    "tempmail.lol": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.32"
+  }
+}
